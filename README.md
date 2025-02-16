@@ -54,11 +54,12 @@ Feature Scaling using StandardScaler to normalize numerical data.
 
 # Prediction Categories:
 0 → Good
+
 1 → Poor
+
 2 → Standard
 
-# 
-How It Works
+# How It Works
 User Input: The user enters their financial details into a web form.
 # Data Preprocessing:
 
@@ -71,6 +72,8 @@ The trained Random Forest Classifier predicts the credit score category.
 
 The predicted category (Good, Standard, Poor) is displayed on a result page.
 
-
 # Run the Application
      python app.py
+# Screenshots:
+![Screenshot (621)](https://github.com/user-attachments/assets/f62fba93-f9de-43bb-9a08-a71da10f22d2)
+![Screenshot (620)](https://github.com/user-attachments/assets/0c01347b-2fef-46f6-b866-3f66000f4ec3)
