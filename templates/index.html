@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Credit Score Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg-image {
+            background-image: url("../static/img1.png");
+            filter: blur(4px);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bg-text {
+            background-color: rgba(0, 46, 75, 0.9);
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .fb-reg-form {
+            border-radius: 10px;
+            box-shadow: 0.3em 0.3em 0.7em #00000015;
+            padding: 20px;
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <div class="container mt-4 bg-text">
+        <h1 class="text-center">Credit Score Prediction</h1>
+        <div class="container fb-reg-form">
+            <form method="POST" action="/classify">
+                <div class="row">
+                    <div class="col">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" name="age" required>
+                    </div>
+                    <div class="col">
+                        <label for="annualIncome">Annual Income:</label>
+                        <input type="number" class="form-control" name="annualIncome" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Delay from Due Date (in days):</label>
+                        <input type="number" class="form-control" name="delayFromDueDate" required>
+                    </div>
+                    <div class="col">
+                        <label>Number of Delayed Payments:</label>
+                        <input type="number" class="form-control" name="numDelayedPayment" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Number of Credit Inquiries:</label>
+                        <input type="number" class="form-control" name="numCreditInquiries" required>
+                    </div>
+                    <div class="col">
+                        <label>Credit Mix:</label>
+                        <select class="form-control" name="creditMix">
+                            <option value="Good">Good</option>
+                            <option value="Standard">Standard</option>
+                            <option value="Bad">Bad</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label>Payment of Minimum Amount:</label><br>
+                <input type="radio" name="paymentMinAmount" value="yes"> Yes
+                <input type="radio" name="paymentMinAmount" value="no" checked> No
+                <input type="radio" name="paymentMinAmount" value="Not Mention"> Not Mention
+
+                <br><br>
+                <center><input type="submit" class="btn btn-primary" value="Submit"></center>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
